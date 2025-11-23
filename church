@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Omega Full Gospel Church</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%231e3c72" width="1200" height="600"/><path fill="%232a5298" d="M0 300 Q300 200 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: #d4af37;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            display: inline-block;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e3c72;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .pastor-card {
+            background: #f5f5f5;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .pastor-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: #1e3c72;
+            margin-bottom: 1rem;
+        }
+
+        .beliefs {
+            background: #f9f9f9;
+        }
+
+        .beliefs-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .belief-item {
+            background: white;
+            padding: 1.5rem;
+            border-left: 4px solid #d4af37;
+            border-radius: 5px;
+        }
+
+        .belief-item h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact {
+            background: #1e3c72;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .contact-item {
+            padding: 1.5rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            background: #0f1f3d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">⍺Ω Alpha Omega</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#beliefs">Beliefs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Alpha Omega Full Gospel Church</h1>
+            <p>"Therefore welcome one another as Christ has welcomed you, for the glory of God." -Romans 15:7</p>
+            <a href="#services" class="cta-button">Join Us This Sunday</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Welcome to Our Church</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Welcome to Alpha Omega Full Gospel Church, where we believe in the complete gospel message and the transforming power of Jesus Christ. We are a Spirit-filled community dedicated to worship, fellowship, and spreading God's love.</p>
+                <p>Our church embraces the full gospel message, including salvation, divine healing, baptism of the Holy Spirit, and the second coming of Christ. We are committed to helping every person discover their purpose and grow in their relationship with God.</p>
+                <p>Whether you're seeking spiritual guidance, looking for a church home, or simply curious about Christianity, we welcome you with open arms.</p>
+            </div>
+            <div class="pastor-card">
+                <h3>Pastor Carter</h3>
+                <p>Lead Pastor</p>
+                <p style="margin-top: 1rem; font-style: italic;">"Come as you are, and let God transform you into who He created you to be."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Service Times</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Sunday Worship</h3>
+                <p><strong>10:00 AM</strong></p>
+                <p>Join us for inspiring worship, powerful preaching, and life-changing fellowship.</p>
+            </div>
+            <div class="service-card">
+                <h3>Wednesday Bible Study</h3>
+                <p><strong>PLACEHOLDER</strong></p>
+                <p>Dive deeper into God's Word and grow in your understanding of Scripture.</p>
+            </div>
+            <div class="service-card">
+                <h3>Event Holding</h3>
+                <p><strong>You Pick</strong></p>
+                <p>Come and have your wedding or retirement party etc. at our church!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="beliefs" class="beliefs">
+        <h2>What We Believe</h2>
+        <div class="beliefs-list">
+            <div class="belief-item">
+                <h3>Salvation</h3>
+                <p>We believe in salvation through faith in Jesus Christ and His atoning work on the cross.</p>
+            </div>
+            <div class="belief-item">
+                <h3>Holy Spirit Baptism</h3>
+                <p>We believe in the baptism of the Holy Spirit as an empowering experience for believers.</p>
+            </div>
+            <div class="belief-item">
+                <h3>Divine Healing</h3>
+                <p>We believe in divine healing through the power and authority of Jesus Christ.</p>
+            </div>
+            <div class="belief-item">
+                <h3>The Bible</h3>
+                <p>We believe the Bible is the inspired, infallible Word of God and our guide for living.</p>
+            </div>
+            <div class="belief-item">
+                <h3>The Trinity</h3>
+                <p>We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit.</p>
+            </div>
+            <div class="belief-item">
+                <h3>Second Coming</h3>
+                <p>We believe in the imminent return of Jesus Christ to establish His kingdom.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Visit Us</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                <h3>📍 Location</h3>
+                <p>123 Faith Avenue<br>Your City, State 12345</p>
+            </div>
+            <div class="contact-item">
+                <h3>📞 Phone</h3>
+                <p>(812)-738-4386</p>
+            </div>
+            <div class="contact-item">
+                <h3>✉️ Email</h3>
+                <p>aofg.church@aol.com</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Alpha Omega Full Gospel Church. All rights reserved.</p>
+        <p>Loving God • Loving People • Changing Lives</p>
+    </footer>
+</body>
+</html>

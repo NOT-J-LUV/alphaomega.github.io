@@ -11,10 +11,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
@@ -24,389 +20,326 @@
         header {
             background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
             color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
         }
 
         nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
+            background: #2a5298;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
+        nav ul {
             list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
         }
 
-        .nav-links a {
+        nav a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
 
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
         }
 
         .hero {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4a6cb8 100%);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%234a7ba7" width="1200" height="600"/><path fill="%23ffffff" opacity="0.1" d="M0 300 Q300 100 600 300 T1200 300 V600 H0 Z"/></svg>');
+            background-size: cover;
+            background-position: center;
             color: white;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
+            padding: 6rem 2rem;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 200px;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.2));
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            padding: 2rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
+        .hero h2 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
-        .hero-content p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .cta-button {
-            background: #d4af37;
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            display: inline-block;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        h2 {
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 3rem;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section h2 {
             color: #1e3c72;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        .pastor-card {
-            background: #f5f5f5;
-            padding: 2rem;
-            border-radius: 10px;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
             text-align: center;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            position: relative;
+            padding-bottom: 1rem;
         }
 
-        .pastor-card h3 {
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
+        .section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, #1e3c72, #2a5298);
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            color: #1e3c72;
-            margin-bottom: 1rem;
-        }
-
-        .beliefs {
-            background: #f9f9f9;
-        }
-
-        .beliefs-list {
+        .info-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
 
-        .belief-item {
+        .info-card {
             background: white;
-            padding: 1.5rem;
-            border-left: 4px solid #d4af37;
-            border-radius: 5px;
-        }
-
-        .belief-item h3 {
-            color: #1e3c72;
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .contact {
-            background: #1e3c72;
-            color: white;
-        }
-
-        .contact h2 {
-            color: white;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .contact-item {
-            padding: 1.5rem;
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
 
-        .contact-item h3 {
+        .info-card h3 {
+            color: #2a5298;
             margin-bottom: 1rem;
             font-size: 1.5rem;
         }
 
+        .info-card p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #1e3c72;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2a5298;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
         footer {
-            background: #0f1f3d;
+            background: #1e3c72;
             color: white;
             text-align: center;
             padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
         }
 
         @media (max-width: 768px) {
-            .hero-content h1 {
+            header h1 {
                 font-size: 2rem;
             }
 
-            .hero-content p {
-                font-size: 1.2rem;
+            .hero h2 {
+                font-size: 2rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #1e3c72;
-                flex-direction: column;
-                padding: 1rem 2rem;
+            nav ul {
                 gap: 1rem;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            h2 {
-                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">⍺Ω Alpha Omega</div>
-            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#services" onclick="closeMenu()">Services</a></li>
-                <li><a href="#beliefs" onclick="closeMenu()">Beliefs</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Alpha Omega Full Gospel Church</h1>
+        <p>"I am the Alpha and the Omega" - Revelation 22:13</p>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Alpha Omega Full Gospel Church</h1>
-            <p>"Therefore welcome one another as Christ has welcomed you, for the glory of God." -Romans 15:7</p>
-            <a href="#services" class="cta-button">Join Us This Sunday</a>
-        </div>
-    </section>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <section id="about">
-        <h2>Welcome to Our Church</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>Welcome to Alpha Omega Full Gospel Church, where we believe in the complete gospel message and the transforming power of Jesus Christ. We are a Spirit-filled community dedicated to worship, fellowship, and spreading God's love.</p>
-                <p>Our church embraces the full gospel message, including salvation, divine healing, baptism of the Holy Spirit, and the second coming of Christ. We are committed to helping every person discover their purpose and grow in their relationship with God.</p>
-                <p>Whether you're seeking spiritual guidance, looking for a church home, or simply curious about Christianity, we welcome you with open arms.</p>
-            </div>
-            <div class="pastor-card">
-                <h3>Pastor Carter</h3>
-                <p>Lead Pastor</p>
-                <p style="margin-top: 1rem; font-style: italic;">"Come as you are, and let God transform you into who He created you to be."</p>
-            </div>
-        </div>
-    </section>
+    <div class="hero" id="home">
+        <h2>Welcome to Our Church Family</h2>
+        <p>Join us as we worship together and grow in faith under the leadership of Pastor Carter</p>
+    </div>
 
-    <section id="services">
-        <h2>Service Times</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Sunday Worship</h3>
-                <p><strong>10:00 AM</strong></p>
-                <p>Join us for inspiring worship, powerful preaching, and life-changing fellowship.</p>
-            </div>
-            <div class="service-card">
-                <h3>Wednesday Bible Study</h3>
-                <p><strong>7:00 PM</strong></p>
-                <p>Dive deeper into God's Word and grow in your understanding of Scripture.</p>
-            </div>
-            <div class="service-card">
-                <h3>Event Holding</h3>
-                <p><strong>You Pick!</strong></p>
-                <p>We can hold anything from your Birthday party to your Retiremnt party!</p>
-            </div>
-        </div>
-    </section>
+    <div class="container">
+        <section class="section" id="about">
+            <h2>About Us</h2>
+            <p style="text-align: center; font-size: 1.1rem; max-width: 800px; margin: 2rem auto; color: #555;">
+                Alpha Omega Full Gospel Church is a community of believers dedicated to spreading the Gospel 
+                and serving our community in New Salisbury, Indiana. Under the guidance of Pastor Carter, 
+                we strive to create a welcoming environment where everyone can experience God's love.
+            </p>
+        </section>
 
-    <section id="beliefs" class="beliefs">
-        <h2>What We Believe</h2>
-        <div class="beliefs-list">
-            <div class="belief-item">
-                <h3>Salvation</h3>
-                <p>We believe in salvation through faith in Jesus Christ and His atoning work on the cross.</p>
+        <section class="section" id="services">
+            <h2>Service Times</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Sunday Morning</h3>
+                    <p>Worship Service<br>10:00 AM</p>
+                </div>
+                <div class="info-card">
+                    <h3>Wednesday Evening</h3>
+                    <p>Bible Study<br>7:00 PM</p>
+                </div>
+                <div class="info-card">
+                    <h3>Prayer Meeting</h3>
+                    <p>Contact us for details</p>
+                </div>
             </div>
-            <div class="belief-item">
-                <h3>Holy Spirit Baptism</h3>
-                <p>We believe in the baptism of the Holy Spirit as an empowering experience for believers.</p>
-            </div>
-            <div class="belief-item">
-                <h3>Divine Healing</h3>
-                <p>We believe in divine healing through the power and authority of Jesus Christ.</p>
-            </div>
-            <div class="belief-item">
-                <h3>The Bible</h3>
-                <p>We believe the Bible is the inspired, infallible Word of God and our guide for living.</p>
-            </div>
-            <div class="belief-item">
-                <h3>The Trinity</h3>
-                <p>We believe in one God eternally existing in three persons: Father, Son, and Holy Spirit.</p>
-            </div>
-            <div class="belief-item">
-                <h3>Second Coming</h3>
-                <p>We believe in the imminent return of Jesus Christ to establish His kingdom.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact">
-        <h2>Visit Us</h2>
-        <div class="contact-info">
-            <div class="contact-item">
-                <h3>📍 Location</h3>
-                <p>6875 Corydon Junction Road<br>New Salisbury, Indiana 47161</p>
+        <section class="section" id="contact">
+            <h2>Contact Us</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Address</h3>
+                    <p>6875 Corydon Junction Road<br>New Salisbury, IN 47161</p>
+                </div>
+                <div class="info-card">
+                    <h3>Phone</h3>
+                    <p><a href="tel:812-738-4386" style="color: #2a5298; text-decoration: none;">812-738-4386</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>Email</h3>
+                    <p><a href="mailto:aofg.church@aol.com" style="color: #2a5298; text-decoration: none;">aofg.church@aol.com</a></p>
+                </div>
             </div>
-            <div class="contact-item">
-                <h3>📞 Phone</h3>
-                <p>812-738-4386</p>
+
+            <div class="contact-form">
+                <h3 style="text-align: center; color: #1e3c72; margin-bottom: 1.5rem;">Send Us a Message</h3>
+                <form action="mailto:aofg.church@aol.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
             </div>
-            <div class="contact-item">
-                <h3>✉️ Email</h3>
-                <p>aofg.church@aol.com</p>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3118.5!2d-86.0!3d38.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDE4JzAwLjAiTiA4NsKwMDAnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <footer>
         <p>&copy; 2024 Alpha Omega Full Gospel Church. All rights reserved.</p>
-        <p>Loving God • Loving People • Changing Lives</p>
+        <p style="margin-top: 0.5rem;">6875 Corydon Junction Road, New Salisbury, IN 47161</p>
     </footer>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        function closeMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.remove('active');
-        }
-    </script>
 </body>
 </html>

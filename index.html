@@ -245,6 +245,50 @@
                 gap: 1rem;
             }
         }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, #e0e7ef 0%, #c9d6e5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+
+        .photo-placeholder svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
     </style>
 </head>
 <body>
@@ -295,6 +339,61 @@
             </div>
         </section>
 
+          <section class="section" id="photos">
+            <h2>Photo Gallery</h2>
+            <p style="text-align: center; color: #555; margin-bottom: 2rem;">Moments from our church community</p>
+            <div class="photo-gallery">
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Sunday Worship</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Bible Study</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Community Events</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Youth Ministry</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Prayer Meetings</p>
+                    </div>
+                </div>
+                <div class="photo-item">
+                    <div class="photo-placeholder">
+                        <svg fill="#2a5298" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                        </svg>
+                        <p>Church Fellowship</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="section" id="contact">
             <h2>Contact Us</h2>
             <div class="info-grid">
@@ -339,7 +438,7 @@
 
     <footer>
         <p>&copy; 2025 Alpha Omega Full Gospel Church. All rights reserved.</p>
-        <p style="margin-top: 0.5rem;">6875 Corydon Junction Road, New Salisbury, IN 47161</p>
+        <p style="margin-top: 0.5rem;">6875 Corydon Junction Rd, New Salisbury, Indiana 47161</p>
     </footer>
 </body>
 </html>
